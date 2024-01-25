@@ -1,0 +1,27 @@
+Bridge zakłada że mamy warstwę abstrakcji i warstwę implementacji
+Jedną warstwę opracowuje i modyfikuje jeden zespół (abstrakcja)
+A drugi drugą (implementacja)
+
+
+czyli
+dzielimy projekt na:
+
+1. interfejsy i klasy abstrakcyjne
+
+2. Konkretne implementacje (klasy)
+
+
+Abstrakcja:
+Interfejsy:
+PoruszaSię, WydajeDźwięk, RozmnażaSię, PosilaSię ... Walczy
+
+Klasy abstrakcyjne:
+Zwierzę:
+Płaz, Gad, Ryba, Ptak, Ssak
+
+==============================================
+
+Implementacje:
+Pingwin, Orzeł, Łosoś, Salamandra, Wilk, Żmija
+
+Zespoły pracują równolegle nie wchodząc sobie w drogę
