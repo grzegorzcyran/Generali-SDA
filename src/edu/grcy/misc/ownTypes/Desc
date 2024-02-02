@@ -1,0 +1,66 @@
+Tworzenie własnych typów danych w Javie jest zalecane w przypadku,
+gdy chcemy zdefiniować własny typ danych, który będzie zawierał w sobie kilka różnych typów danych.
+
+W przypadku, gdy chcemy stworzyć typ danych, który będzie zawierał w sobie tylko jeden typ danych,
+to możemy skorzystać z typów generycznych.
+
+Typy generyczne pozwalają na stworzenie typu danych, który będzie zawierał w sobie jeden typ danych.
+
+Zalety stosowania własnych typów danych:
+- czytelniejszy kod
+- łatwiejsza praca z kodem
+- łatwiejsze testowanie kodu
+- podział kodu na mniejsze części
+- przypisywanie logiki do konkretnych klas
+
+Przykładowo możemy trzymać numer konta bankowego w postaci String,
+ale wtedy nie będziemy mogli wykonać na nim waliacji, czy dostosoawania do odpowiedniego formatu.
+
+W przypadku, gdy stworzymy własny typ danych, to będziemy mogli zdefiniować w nim odpowiednie metody,
+które będą wykonywały walidację, czy dostosowanie do odpowiedniego formatu.
+
+W przypadku własnych typów danych należy pamiętać o tym, żeby nie tworzyć zbyt dużych klas,
+ale zawsze warto wykonać własną implementację metod toString(), equals() i hashCode().
+Metodę toString() warto wykonać, ponieważ wtedy będziemy mogli wyświetlić obiekt w czytelny sposób.
+Metodę equals() warto wykonać, ponieważ wtedy będziemy mogli porównywać obiekty.
+Metodę hashCode() warto wykonać, ponieważ wtedy będziemy mogli porównywać obiekty.
+
+Kontrakt między metodami equals() i hashCode():
+- jeżeli metoda equals() zwraca true, to metoda hashCode() musi zwrócić tą samą wartość
+- jeżeli metoda equals() zwraca false, to metoda hashCode() może zwrócić tą samą wartość, ale nie musi
+
+W przypadku, gdy nie wykonamy własnej implementacji metod equals() i hashCode(),
+będą one działały tak samo, jak metody z klasy Object.
+Spowoduje to to, że metoda equals() będzie porównywała referencje, a nie wartości obiektów.
+Spowoduje to to, że metoda hashCode() będzie zwracała różne wartości dla różnych obiektów.
+
+W przypadku, gdy nie wykonamy własnej implementacji metody toString(),
+będzie ona działała tak samo, jak metoda z klasy Object, czyli zwróci nazwę klasy i adres obiektu w pamięci.
+
+### Zadanie 1 - klasa `BankAccount`
+Napisz klasę `BankAccount`, która będzie zawierała w sobie numer konta bankowego w postaci String.
+W konstruktorze klasy powinien być przekazywany numer konta bankowego i kod kraju, w którym jest założone konto.
+Klasa powinna zawierać metody:
+- `getAccountNumber()` - zwraca numer konta bankowego
+- `getIBAN()` - zwraca numer konta bankowego w formacie IBAN
+
+Zadanie 2 - klasa Pesel
+Napisz klasę `Pesel`, która będzie zawierała w sobie numer PESEL w postaci String.
+W konstruktorze klasy powinien być przekazywany numer PESEL.
+Klasa powinna zawierać metody:
+- `getPesel()` - zwraca numer PESEL
+- `getBirthDate()` - zwraca datę urodzenia w formacie `yyyy-MM-dd`
+- `getGender()` - zwraca płeć na podstawie numeru PESEL
+
+Napisz klasę `PeselValidator`, która będzie zawierała w sobie metodę `validate(String pesel)`,
+która będzie sprawdzała, czy przekazany numer PESEL jest poprawny.
+Poprawny numer PESEL powinien zawierać 11 cyfr, datę urodzenia, cyfrę kontrolną i płeć.
+Przykładowo numer PESEL `44051401458` jest poprawny, ponieważ:
+- zawiera 11 cyfr
+- data urodzenia to `1944-05-14`
+- cyfra kontrolna to `8`, która jest poprawna na podstawie algorytmu Luhna (https://pl.wikipedia.org/wiki/PESEL#Cyfra_kontrolna)
+- płeć to `M` (mężczyzna) na podstawie ostatniej cyfry numeru PESEL - dla mężczyzn jest to liczba parzysta
+
+Napisz interfejs Identity z metodą
+- `String getIdentity()`
+Dla klasy `Pesel` zapewnij implementację interfejsu `Identity`.

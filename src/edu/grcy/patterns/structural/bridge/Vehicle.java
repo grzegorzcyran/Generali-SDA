@@ -14,7 +14,7 @@ abstract class Vehicle {
 		this.workShops = workShops;
 	}
 
-	abstract public void manufacture();
+	public abstract void manufacture();
 }
 
 // Refine abstraction 1 in bridge pattern

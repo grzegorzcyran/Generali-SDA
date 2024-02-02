@@ -1,0 +1,50 @@
+Fluent API to metoda tworzenia klasy w sposób bardziej czytelny i zwięzły. W przypadku Fluent API nie musimy tworzyć obiektu klasy, a następnie wywoływać na nim metod. Możemy to zrobić w jednej linijce kodu. Przykładem może być metoda `with` z klasy `Person`:
+
+```java
+Person person = new Person().withName("Jan").withSurname("Kowalski").withAge(30);
+
+class Person {
+    private String name;
+    private String surname;
+    private int age;
+
+    public Person withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    public Person withSurname(String surname) {
+        this.surname = surname;
+        return this;
+    }
+
+    public Person withAge(int age) {
+        this.age = age;
+        return this;
+    }
+}
+```
+
+W przypadku Fluent API, metoda `with` zwraca obiekt klasy `Person`,
+dzięki czemu możemy wywołać na nim kolejną metodę `with`.
+
+### Zadanie 1
+Utworzyć klasę "Soup" z Fluent API. Klasa powinna mieć następujące metody:
+* `withWater` - dodaje wodę do zupy
+* `withVegetables` - dodaje warzywa do zupy
+* `withMeat` - dodaje mięso do zupy
+* `withSpices` - dodaje przyprawy do zupy
+* `boil` - gotuje zupę
+
+Każda z metod powinna zwracać obiekt klasy `Soup`.
+Do każdej z metod powinna być przekazywana ilość i / lub rodzaj dodawanych składników.
+Każda z metod powinna wyświetlać informację o tym, co zostało dodane do zupy.
+Metoda `boil` powinna wyświetlać informację o tym, że zupa jest gotowa.
+
+### Zadanie 2
+Utworzyć klasę "Car" z Fluent API. Klasa powinna mieć następujące metody:
+* `withEngine` - dodaje silnik do samochodu
+* `withWheels` - dodaje koła do samochodu
+* `withBody` - dodaje karoserię do samochodu
+* `withHeadlights` - dodaje reflektory do samochodu
+* `withInterior` - dodaje wnętrze do samochodu

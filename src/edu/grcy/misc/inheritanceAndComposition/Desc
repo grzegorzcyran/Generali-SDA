@@ -1,0 +1,44 @@
+Kompozycja i dziedziczenie
+Dziedziczenie to relacja pomiędzy klasami, w której obiekty jednej klasy są obiektami drugiej klasy.
+Dziedziczenie jest relacją typu „jest” (is-a).
+W związku z tym dziedziczenie jest relacją silniejszą niż kompozycja.
+Przykład: klasa Pies dziedziczy po klasie Zwierzę.
+
+Kompozycja to relacja pomiędzy klasami, w której obiekty jednej klasy są częściami obiektów drugiej klasy.
+W odróżnieniu od dziedziczenia, kompozycja nie jest relacją typu „jest” (is-a), lecz typu „ma” (has-a).
+W związku z tym kompozycja jest relacją słabszą niż dziedziczenie.
+W kompozycji obiekty jednej klasy są częściami obiektów drugiej klasy, ale nie muszą być nimi zawsze.
+Przykład: klasa Samochód posiada pole typu Silnik, które jest obiektem klasy Silnik.
+
+W języku Java dziedziczenie jest realizowane za pomocą słowa kluczowego extends, a kompozycja za pomocą słowa kluczowego new.
+
+###Zadanie 1
+Zaimplementuj klasę `Point` reprezentującą punkt na płaszczyźnie. Klasa powinna zawierać:
+- dwa pola typu `double` o nazwach `x` i `y` reprezentujące współrzędne punktu,
+- konstruktor przyjmujący dwa argumenty typu `double` i ustawiający pola `x` i `y` na wartości podane w argumentach,
+- metodę `getX` zwracającą współrzędną `x` punktu,
+- metodę `getY` zwracającą współrzędną `y` punktu,
+- metodę `distance(Point other)` zwracającą odległość między punktami `this` i `other`.
+
+Zaimplementuj klasę `Circle` reprezentującą okrąg na płaszczyźnie. Klasa powinna zawierać:
+- pole typu `Point` o nazwie `center` reprezentujące środek okręgu,
+- pole typu `double` o nazwie `radius` reprezentujące promień okręgu,
+- konstruktor przyjmujący dwa argumenty typu `double` i tworzący okrąg o środku w punkcie `(0, 0)` i promieniu podanym w argumentach,
+- konstruktor przyjmujący trzy argumenty typu `double` i tworzący okrąg o środku w punkcie o współrzędnych podanych w pierwszych dwóch argumentach i promieniu podanym w trzecim argumencie,
+- metodę `getCenter` zwracającą środek okręgu,
+- metodę `getRadius` zwracającą promień okręgu,
+- metodę `distance(Circle other)` zwracającą odległość między środkami okręgów `this` i `other`.
+
+
+
+
+
+
+
+
+Zadanie 2
+
+Zaimplementuj interfejs `Distance` zawierający metodę generyczną `distance` zwracającą odległość między dwoma obiektami typu `T`.
+Zmień klasę `Point` tak, aby implementowała interfejs `Distance` i zwracała odległość między dwoma punktami.
+Zmień klasę `Circle` tak, aby implementowała interfejs `Distance` i zwracała odległość między środkiem okręgu a punktem.
+Sprawdź, czy Twoje rozwiązanie działa dla obiektów typu `Point` i `Circle`.

@@ -1,0 +1,3 @@
+Postarajcie się napisać mechanizm strategii
+ - ogólny interfejs Work
+ - implementacje RemoteWork i OfficeWork

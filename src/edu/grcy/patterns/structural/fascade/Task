@@ -1,0 +1,3 @@
+Zróbcie mechanizm zamawiania pizzy w pizzerii.
+Klient podaje numer telefonu, adres, zamawia pizze, płaci kartą lub gotówką.
+Fasada powinna załatwić zamówienie i płatność.

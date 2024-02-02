@@ -1,0 +1,9 @@
+Zróbcie klasę Adres z kilkoma polami i wypełnianiem jej z Buildera
+
+Pola klasy:
+- ulica
+- numer domu
+- numer mieszkania
+- kod pocztowy
+- miejscowość
+- kraj

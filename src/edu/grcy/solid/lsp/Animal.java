@@ -17,11 +17,21 @@ class Duck extends Bird {
     public void fly() {
         System.out.println("Duck flying");
     }
+
+    @Override
+    public void eat() {
+
+    }
 }
 
 class Penguin extends Bird {
     @Override
     public void fly() {
         throw new UnsupportedOperationException("Penguins cannot fly");
+    }
+
+    @Override
+    public void eat() {
+
     }
 }

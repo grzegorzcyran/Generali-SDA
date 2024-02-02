@@ -7,7 +7,13 @@ public class Employee {
         this.department = department;
     }
 
+    //poniższa metoda łamie prawo Demeter bo klasa Employee nie ma dostępu do Manager'a bezpośrednio
     public void approveExpense(Expenses expenses) {
         department.getManager().approveExpense(expenses);
+    }
+
+
+    public void approve(Expenses expenses) {
+        department.approveExpences(expenses);
     }
 }

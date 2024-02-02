@@ -1,0 +1,7 @@
+Zróbcie klasę Person która będzie miała kilka pól i do jej tworzenia będzie potrzebna fabryka.
+
+Pola klasy:
+- imie
+- nazwisko
+- wiek
+- płeć.

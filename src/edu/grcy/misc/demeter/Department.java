@@ -13,6 +13,10 @@ public class Department {
     public Manager getManager() {
         return manager;
     }
+
+    public void approveExpences(Expenses expenses) {
+        manager.approve(expenses);
+    }
 }
 
 class Manager extends Employee {

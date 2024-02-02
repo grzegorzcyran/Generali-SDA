@@ -1,0 +1,91 @@
+Niemutowalność obiektów w Javie
+Niemutowalność obiektów w Javie to bardzo ważny temat, który jest często pomijany w wielu kursach.
+W tym artykule dowiesz się, czym jest niemutowalność obiektów, jakie są jej zalety i jak ją zaimplementować w Javie.
+
+Aby zrozumieć, czym jest niemutowalność obiektów, musimy najpierw zrozumieć, czym jest mutowalność obiektów.
+Mutowalność obiektów oznacza, że ich stan może się zmieniać.
+Na przykład, jeśli mamy obiekt klasy Person, to możemy zmienić jego imię, nazwisko, wiek itp.
+Wszystkie te pola są mutowalne, ponieważ ich wartość może się zmieniać.
+
+Niemutowalność obiektów oznacza, że ich stan nie może się zmieniać.
+Jeśli mamy obiekt klasy Person, to nie możemy zmienić jego imienia, nazwiska, wieku itp.
+Jeśli chcemy zmienić którąś z tych wartości, musimy utworzyć nowy obiekt klasy Person z nowymi wartościami.
+
+Niemutowalność obiektów jest bardzo ważna w wielowątkowych aplikacjach.
+Jeśli obiekt jest niemutowalny, to nie musimy się martwić o to, że jego stan zostanie zmieniony przez inny wątek.
+
+Niemutowalność obiektów jest również ważna w aplikacjach rozproszonych.
+Jeśli obiekt jest niemutowalny, to możemy go bezpiecznie przesyłać do innych aplikacji, ponieważ nie musimy się martwić o to, że jego stan zostanie zmieniony przez inną aplikację.
+
+Niemutowalność obiektów przydaje się również w kolekcjach.
+Jest to szczególnie ważne w przypadku kolekcji które opierają się na hashcode, takich jak HashSet, HashMap, HashTable itp.
+Jeśli obiekt jest niemutowalny, to jego hashcode jest stały, więc możemy go bezpiecznie używać w kolekcjach które opierają się na hashcode.
+
+Niemutowalność obiektów jest również ważna w przypadku wzorca projektowego Value Object.
+Wzorzec ten polega na tym, że tworzymy obiekt, który reprezentuje wartość, a nie obiekt, który reprezentuje encję.
+Na przykład, jeśli mamy obiekt klasy Person, to możemy go zmienić, ale jeśli mamy obiekt klasy Age, to nie możemy go zmienić.
+
+Niemutowalność obiektów jest również ważna w przypadku wzorca projektowego Data Transfer Object.
+Wzorzec ten polega na tym, że tworzymy obiekt, który reprezentuje dane, często dane które są przesyłane do innej aplikacji.
+
+Niemutowalność obiektów w Javie jest bardzo ważna, ale nie jest łatwa do zaimplementowania.
+W Javie nie ma wbudowanych mechanizmów, które umożliwiają tworzenie niemutowalnych obiektów.
+Aby zaimplementować niemutowalność obiektów w Javie, musimy zastosować kilka technik.
+Pola obiektu muszą być prywatne, a dostęp do nich musi być kontrolowany przez metody.
+Pola obiektu muszą być finalne, aby nie można było ich zmienić.
+Jeśli pole obiektu jest obiektem, to musi być ono niemutowalne.
+Jeśli pole obiektu jest kolekcją, to musi być ono niemutowalne.
+Niemutowalność pola obiektu które jest kolekcją można zapewnić poprzez udostępnianie tylko metod do odczytu tej kolekcji.
+Taka metoda może zwracać kopię kolekcji, aby zapewnić, że oryginalna kolekcja nie zostanie zmieniona.
+
+Przykład niemutowalnego obiektu w Javie
+Poniższy przykład pokazuje, jak zaimplementować niemutowalność obiektu w Javie.
+public final class Person {
+    private final String name;
+    private final int age;
+    private final List<Person> friends;
+
+    public Person(String name, int age, List<Person> friends) {
+        this.name = name;
+        this.age = age;
+        this.friends = friends;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    // zwraca kopię kolekcji friends
+    public List<Person> getFriends() {
+        return new ArrayList<>(friends);
+    }
+
+    public List<Person> getFriends() {
+        return Collections.unmodifiableList(friends);
+    }
+
+    public List<Person> getFriends() {
+        return List.copyOf(friends);
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", friends=" + friends +
+                '}';
+    }
+}
+
+### Zadanie 1
+Stwórz klasę Lokal która będzie niezmienialna (immutable). Klasa powinna zawierać pola:
+ - ulica
+ - numer domu
+ - numer mieszkania
+ - lista mieszkańców
+ - miejscowość

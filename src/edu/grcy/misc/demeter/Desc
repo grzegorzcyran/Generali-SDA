@@ -1,0 +1,9 @@
+Prawo Demeter w programowaniu obiektowym mówi, że klasa nie powinna znać implementacji swoich pól,
+a jedynie ich interfejsy.
+W praktyce oznacza to, że klasa nie powinna mieć dostępu do pól innych klas, a jedynie do ich metod.
+W ten sposób klasa nie będzie zależna od implementacji innych klas, a jedynie od ich interfejsów.
+Dzięki temu zmiana implementacji innych klas nie będzie wymagała zmian w klasie, która z nich korzysta.
+
+Przykładem złamania prawa Demeter jest sytuacja, w której klasa Person ma dostęp do pola name klasy Address.
+
+
