@@ -1,0 +1,56 @@
+Napisać klasę Samochód, która ma pola:
+    - marka
+    - model
+    - rokProdukcji
+    - VIN
+    - przebieg
+    - cena
+    - listaWłaścicieli
+    - dataOstatniegoPrzeglądu
+
+Napisać klasę Klient, która ma pola:
+    - imię
+    - nazwisko
+    - pesel
+    - daneKontaktowe
+    - listaSamochodów
+
+Klient ma mieć możliwość przypisania sobie samochodu, ale tylko jeśli nie ma już przypisanego samochodu o tym samym VINie.
+Klient ma mieć możliwość sprzedania samochodu do salonu, ale tylko jeśli jest jego właścicielem.
+
+Napisać klasę SalonSamochodowy, która ma pola:
+    - listaSamochodów
+    - listaKlientów
+
+Salon ma mieć możliwość dodania samochodu do listy samochodów, ale tylko jeśli nie ma już samochodu o tym samym VINie.
+Salon ma mieć możliwość dodania klienta do listy klientów, ale tylko jeśli nie ma już klienta o tym samym peselu.
+Salon ma mieć możliwość kontaktu z klientami którym kończy się termin przeglądu jednego z samochodów w ciągu najbliższych 7 dni.
+Każdy kontakt ma być ewidencjonowany w historii kontaktów klienta, z zaznaczeniem drogą jakiego kontaktu został wykonany.
+Kontakt może się zakończyć umówieniem na wizytę w serwisie, wtedy ma być dodawany przegląd samochodu do ewidencji przeglądów.
+Kontakt może się zakończyć odmową wizyty w serwisie, wtedy ma być dodawany wpis o odmowie wizyty do ewidencji przeglądów.
+
+Salon ma mieć możliwość wyświetlania listy samochodów z podziałem na klientów, którzy je posiadają.
+
+Salon ma mieć ewidencję przeglądów samochodów, która ma zawierać:
+    - datę przeglądu
+    - samochód
+    - klienta
+    - koszt
+    - uwagi
+
+Napisać klasę DaneKontaktowe, która ma pola:
+    - adres
+    - telefon
+    - email
+    - preferowanyKontakt
+
+Jeśli klient nie poda preferowanego kontaktu, to domyślnie jest to telefon.
+
+Jeśli w opisie powyżej brakuje jakichś informacji, to proszę je dodać.
+Dodawać można pola, klasy, metody, cokolwiek co jest potrzebne do realizacji zadania.
+
+Dodać możliwość sprzedaży ubezpieczeń do samochodów.
+Dodać możliwość serwisowania samochodów dla których klienci nie są zarejestrowani w salonie.
+Dodać możliwość sprzedaży ubezpieczeń dla niezarejestrowanych klientów,
+którzy serwisują samochody w salonie.
+
